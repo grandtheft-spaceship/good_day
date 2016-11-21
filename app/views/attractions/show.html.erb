@@ -1,0 +1,15 @@
+<h2><%= @attraction.name %></h2>
+  <h3>Location</h3>
+    <p>
+      <%= @attraction.location %>
+    </p>
+
+  <h3>Visitors</h3>
+    <ul>
+      <% @attraction.users.each do |user| %>
+        <li><%= link_to "#{user.username}", user_path(user) %></li>
+      <% end %>
+    </ul>
+
+<%= link_to 'Edit', edit_attraction_path(@attraction) %>
+<%= link_to 'Back', attractions_path %>    
