@@ -18,9 +18,14 @@ end
   Attraction.create(name: Faker::Company.name, location: Faker::Address.city)
 end
 
-Eatery.all.each do |eatery|
-  Attraction.all.each do |attraction|
-    Agenda.create(eatery_id: eatery.id, attraction_id: attraction.id, user_id: rand(1..5))
-  end
+10.times do 
+  Agenda.create(eatery_id: rand(1..20), attraction_id: rand(1..20), user_id: rand(1..5))
 end
+
+# Eatery.all.each do |eatery|
+#   Attraction.all.each do |attraction|
+#     Agenda.create(eatery_id: eatery.id, attraction_id: attraction.id, user_id: rand(1..5))
+#   end
+# end
+
 
