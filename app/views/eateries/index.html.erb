@@ -1,1 +1,6 @@
 <h2>All Eateries</h2>
+  <% @eateries.each do |eatery| %>
+  <p>
+    <%= link_to "#{eatery.name}", eatery_path(eatery) %>
+  </p>
+  <% end %>
